@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Diego Rodríguez">
     <meta name="description" content="Catálogo de servicios y packs mayoristas en D.M.O Soluciones Mayoristas">
-    <title>Servicios y Pedidos</title>
+    <title>Catálogo de Rubros y Pedidos</title>
     <link rel="stylesheet" href="styles3.css">
     <script src="app2.js" defer></script>
 </head>
@@ -27,15 +27,15 @@
 
     <section class="hero-banner">
         <div class="hero-content">
-            <h2>CATÁLOGO DE SERVICIOS Y PEDIDOS</h2>
-            <p>Selecciona tus productos o packs mayoristas para cotizar.</p>
+            <h2>NUESTROS RUBROS Y CATÁLOGOS</h2>
+            <p>Ofrecemos una variedad de categorías pensadas para maximizar tus márgenes de ganancia.</p>
         </div>
     </section>
 
     <main class="container">
         <section class="card">
-            <h2>Servicios y Packs Disponibles</h2>
-            <p class="instruccion">Selecciona un paquete del catálogo para solicitar cotización:</p>
+            <h2>Selección de Catálogos</h2>
+            <p class="instruccion">Haz clic en un rubro del catálogo para seleccionarlo y solicitar tu pedido:</p>
 
             <div id="contenedor-obras" class="grid-servicios"></div>
 
@@ -43,8 +43,8 @@
 
             <form id="form-oferta">
                 <div class="campo">
-                    <label for="nombre-pintura">Servicio o Pack Seleccionado:</label>
-                    <input type="text" id="nombre-pintura" placeholder="Haz clic en un pack superior" readonly required>
+                    <label for="nombre-pintura">Rubro o Pack Seleccionado:</label>
+                    <input type="text" id="nombre-pintura" placeholder="Haz clic en un catálogo superior" readonly required>
                 </div>
 
                 <div class="campo">
@@ -62,7 +62,7 @@
                 <table class="tabla-admin">
                     <thead>
                         <tr>
-                            <th>Servicio Solicitado</th>
+                            <th>Rubro Solicitado</th>
                             <th>Monto Estimado</th>
                             <th>Fecha</th>
                         </tr>
