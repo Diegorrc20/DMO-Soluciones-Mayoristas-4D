@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             imagen: 'Cuidado Personal.png' 
         },
         { 
-            titulo: 'Acsesorios de pelo', 
+            titulo: 'Accesorios de pelo', 
             precio: 8000, 
             descripcion: 'Surtido amplio con despacho prioritario para minimarkets y locales.',
             imagen: 'Acesorios de pelo.png' 
