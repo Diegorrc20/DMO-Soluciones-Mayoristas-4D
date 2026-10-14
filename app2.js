@@ -4,37 +4,37 @@ document.addEventListener("DOMContentLoaded", function () {
             titulo: 'Belleza & Cosmetica', 
             precio: 15000, 
             descripcion: 'Productos esenciales de maquillaje y cosmética para potenciar tu catálogo.',
-            imagen: 'Imagenes/Belleza & Cosmetica.png' 
+            imagen: "Belleza & Cosmetica.png' 
         },
         { 
             titulo: 'Cuidado Personal', 
             precio: 8000, 
             descripcion: 'Variedad de artículos de higiene y cuidado diario por mayor.',
-            imagen: 'Imagenes/Cuidado Personal.png' 
+            imagen: 'Cuidado Personal.png' 
         },
         { 
             titulo: 'Acsesorios de pelo', 
             precio: 8000, 
             descripcion: 'Surtido amplio con despacho prioritario para minimarkets y locales.',
-            imagen: 'Imagenes/Acesorios de pelo.png' 
+            imagen: 'Acesorios de pelo.png' 
         },
         { 
             titulo: 'Bisusteria', 
             precio: 5000, 
             descripcion: 'Complementos y accesorios de bisutería con diseños atractivos.',
-            imagen: 'Imagenes/Bisuteria.png' 
+            imagen: 'Bisuteria.png' 
         },
         { 
             titulo: 'Pestañas por Punto', 
             precio: 10000, 
             descripcion: 'Extensiones y pestañas por punto de alta calidad para aplicación.',
-            imagen: 'Imagenes/Pestañas por punto.png' 
+            imagen: 'Pestañas por punto.png' 
         },
         { 
             titulo: 'Collares', 
             precio: 4500, 
             descripcion: 'Hermosos diseños de collares por mayor para complementar tu tienda.',
-            imagen: 'Imagenes/Collares.png' 
+            imagen: 'Collares.png' 
         }
     ];
 
