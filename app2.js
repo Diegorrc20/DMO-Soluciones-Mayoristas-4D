@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", function () {
             titulo: 'Pack Abarrotes Básico', 
             precio: 150000, 
             descripcion: 'Insumos esenciales para almacenes pequeños (Arroz, Fideos, Aceite, Azúcar).',
-            imagen: 'Imagenes/47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
         },
         { 
             titulo: 'Pack Comercial Pyme', 
             precio: 350000, 
             descripcion: 'Variedad de abarrotes, enlatados y productos de limpieza por mayor.',
-            imagen: 'Imagenes/47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
         },
         { 
             titulo: 'Pack Mayorista Completo', 
             precio: 600000, 
             descripcion: 'Surtido amplio con despacho prioritario para minimarkets y locales.',
-            imagen: 'Imagenes/47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
         }
     ];
 
