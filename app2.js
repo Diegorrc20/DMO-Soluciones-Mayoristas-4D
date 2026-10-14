@@ -1,22 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
     var packs = [
         { 
-            titulo: 'Pack Abarrotes Básico', 
-            precio: 150000, 
-            descripcion: 'Insumos esenciales para almacenes pequeños (Arroz, Fideos, Aceite, Azúcar).',
-            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            titulo: 'Belleza & Cosmetica', 
+            precio: 15000, 
+            descripcion: 'Productos esenciales de maquillaje y cosmética para potenciar tu catálogo.',
+            imagen: 'Imagenes/Belleza & Cosmetica.png' 
         },
         { 
-            titulo: 'Pack Comercial Pyme', 
-            precio: 350000, 
-            descripcion: 'Variedad de abarrotes, enlatados y productos de limpieza por mayor.',
-            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            titulo: 'Cuidado Personal', 
+            precio: 8000, 
+            descripcion: 'Variedad de artículos de higiene y cuidado diario por mayor.',
+            imagen: 'Imagenes/Cuidado Personal.png' 
         },
         { 
-            titulo: 'Pack Mayorista Completo', 
-            precio: 600000, 
+            titulo: 'Acsesorios de pelo', 
+            precio: 8000, 
             descripcion: 'Surtido amplio con despacho prioritario para minimarkets y locales.',
-            imagen: '47b3852a-9059-4808-a445-7b7e8baf6868.png' 
+            imagen: 'Imagenes/Acesorios de pelo.png' 
+        },
+        { 
+            titulo: 'Bisusteria', 
+            precio: 5000, 
+            descripcion: 'Complementos y accesorios de bisutería con diseños atractivos.',
+            imagen: 'Imagenes/Bisuteria.png' 
+        },
+        { 
+            titulo: 'Pestañas por Punto', 
+            precio: 10000, 
+            descripcion: 'Extensiones y pestañas por punto de alta calidad para aplicación.',
+            imagen: 'Imagenes/Pestañas por punto.png' 
+        },
+        { 
+            titulo: 'Collares', 
+            precio: 4500, 
+            descripcion: 'Hermosos diseños de collares por mayor para complementar tu tienda.',
+            imagen: 'Imagenes/Collares.png' 
         }
     ];
 
@@ -26,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var formOferta = document.getElementById("form-oferta");
     var tablaPujasBody = document.getElementById("tabla-pujas-body");
 
-    // Dibuja las tarjetas con imagen en la pantalla
+    // Dibuja las tarjetas tipo catálogo en la pantalla
     function mostrarCatalogo() {
         if (!contenedorObras) return;
         contenedorObras.innerHTML = "";
@@ -44,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p class="galeria-titulo">${pack.titulo}</p>
                     <p class="galeria-descripcion">${pack.descripcion}</p>
                     <p class="galeria-precio">$${pack.precio.toLocaleString("es-CL")} CLP</p>
-                    <button type="button" class="btn-seleccionar">Seleccionar Pack</button>
+                    <button type="button" class="btn-seleccionar">Seleccionar Catálogo</button>
                 </div>
             `;
 
@@ -96,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var correo = localStorage.getItem("correoLogueado") || "contacto@cliente.cl";
 
             if (packVal === "" || montoVal <= 0) {
-                alert("Por favor selecciona un pack válido.");
+                alert("Por favor selecciona un catálogo válido.");
                 return;
             }
 
