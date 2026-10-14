@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Diego Rodríguez">
+    <meta name="description" content="Catálogo de servicios y packs mayoristas en D.M.O Soluciones Mayoristas">
+    <title>Servicios y Pedidos</title>
+    <link rel="stylesheet" href="CSS/styles3.css">
+    <script src="JS/app2.js" defer></script>
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="logo-titulo">
+            <img src="Imagenes/Logo.png" alt="Logo D.M.O Mayoristas" class="logo">
+            <h1>D.M.O Mayoristas</h1>
+        </div>
+
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="servicios.html" class="active">Servicios</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>CATÁLOGO DE SERVICIOS Y PEDIDOS</h2>
+            <p>Selecciona tus productos o packs mayoristas para cotizar.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="card">
+            <h2>Servicios y Packs Disponibles</h2>
+            <p class="instruccion">Selecciona un paquete del catálogo para solicitar cotización:</p>
+
+            <div id="contenedor-obras" class="grid-servicios"></div>
+
+            <hr class="separador">
+
+            <form id="form-oferta">
+                <div class="campo">
+                    <label for="nombre-pintura">Servicio o Pack Seleccionado:</label>
+                    <input type="text" id="nombre-pintura" placeholder="Haz clic en un pack superior" readonly required>
+                </div>
+
+                <div class="campo">
+                    <label for="monto-oferta">Monto Estimado del Pedido (CLP):</label>
+                    <input type="number" id="monto-oferta" placeholder="150000" readonly required>
+                </div>
+
+                <button type="submit" class="btn">Enviar Pedido / Cotización</button>
+            </form>
+
+            <hr class="separador">
+
+            <h3>Historial de Solicitudes</h3>
+            <div class="tabla-responsive">
+                <table class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>Servicio Solicitado</th>
+                            <th>Monto Estimado</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-pujas-body">
+                        <tr>
+                            <td colspan="3" style="text-align:center;">No hay solicitudes registradas aún.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 D.M.O Soluciones Mayoristas.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

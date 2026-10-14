@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-principal {
+    background-color: #ffffff;
+    border-bottom: 3px solid #003399;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-titulo .logo {
+    height: 120px;
+    width: auto;
+}
+
+.logo-titulo h1 {
+    font-size: 1.3rem;
+    color: #003399;
+    font-weight: bold;
+}
+
+.nav-principal a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+}
+
+.nav-principal a.active {
+    color: #ff2a85;
+}
+
+.hero-banner {
+    background-color: #003399;
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.hero-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    flex: 1;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid #e5e7eb;
+}
+
+.card h2 {
+    color: #003399;
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+.instruccion {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.separador {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #eaeaea;
+}
+
+/* Grilla de tarjetas limpia */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.tarjeta-galeria {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 15px;
+    background-color: #ffffff;
+    text-align: center;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Borde azul sobrio al pasar el mouse (sin sombra ni tinte rosa) */
+.tarjeta-galeria:hover {
+    border-color: #003399;
+    box-shadow: 0 2px 6px rgba(0, 51, 153, 0.12);
+}
+
+.galeria-img-container {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.galeria-img-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.galeria-titulo {
+    color: #003399;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.galeria-descripcion {
+    font-size: 0.85rem;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+.galeria-precio {
+    color: #ff2a85;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.btn-seleccionar {
+    background-color: #003399;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-seleccionar:hover {
+    background-color: #002266;
+}
+
+/* Formulario */
+#form-oferta .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+#form-oferta label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333333;
+}
+
+#form-oferta input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: #f9f9f9;
+}
+
+.btn {
+    width: 100%;
+    background-color: #003399;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #002266;
+}
+
+/* Tabla */
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.tabla-admin th, .tabla-admin td {
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.tabla-admin th {
+    background-color: #003399;
+    color: #ffffff;
+}
+
+footer {
+    background-color: #0b1325;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 640px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+}

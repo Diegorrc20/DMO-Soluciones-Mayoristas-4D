@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../Imagenes/fondo-agua.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #e9d5ff;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+.header-principal {
+    background-color: #ffffff;
+    border-bottom: 3px solid #ff2a85;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+
+.logo-titulo h1 {
+    font-size: 20px;
+    color: #003399;
+    margin: 0;
+}
+
+.nav-principal a {
+    text-decoration: none;
+    color: #333333;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.nav-principal a:hover,
+.nav-principal a.active {
+    color: #ff2a85;
+}
+
+.hero-banner {
+    background-color: #003399;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.hero-banner h2 {
+    margin: 0;
+}
+
+.container {
+    max-width: 850px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+}
+
+.card h2 {
+    color: #003399;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #003399;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff2a85;
+}
+
+#seccion-login {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 450px;
+    margin: 30px auto 10px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#seccion-login h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #003399;
+    padding-bottom: 6px;
+    font-size: 1.3rem;
+    color: #003399;
+}
+
+#seccion-login p {
+    margin-bottom: 15px;
+    color: #555555;
+    font-size: 0.9rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #003399;
+    box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.15);
+}
+
+#form-login button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.mensaje-error {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-contenido h2 {
+    margin-top: 0;
+    color: #003399;
+    font-size: 1.25rem;
+}
+
+.modal-contenido p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover {
+    color: #000;
+}
+
+.btn-admin-ingresar {
+    width: 100%;
+    background-color: #003399;
+    margin-top: 10px;
+}
+
+#panel-admin {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+#panel-admin h2 {
+    color: #003399;
+    margin-top: 0;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.tabla-admin th, 
+.tabla-admin td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.tabla-admin th {
+    background-color: #003399;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.tabla-admin tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btn-eliminar-fila {
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-eliminar-fila:hover {
+    background-color: #dc2626;
+}
+
+.acciones-panel-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#btn-cerrar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-cerrar:hover {
+    background-color: #c9302c;
+}
+
+.btn-admin-panel {
+    background-color: #334155;
+    color: #ffffff;
+    padding: 10px 16px;
+    border: 1px solid #1e293b;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-admin-panel:hover {
+    background-color: #0f172a;
+    color: #38bdf8;
+}
+
+footer {
+    background-color: #111827; 
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p,
+footer .footer-text,
+.footer-contacto,
+.footer-contacto h3 {
+    color: #ffffff !important; 
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .tabla-admin {
+        display: block;
+        overflow-x: auto;
+    }
+    .acciones-panel-admin {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

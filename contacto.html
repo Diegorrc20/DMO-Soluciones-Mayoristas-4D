@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Diego Rodríguez">
+    <meta name="description" content="Información de contacto y atención a clientes de D.M.O Soluciones Mayoristas">
+    <meta name="keywords" content="D.M.O Soluciones Mayoristas, contacto, dirección, teléfono, correo, abarrotes">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="CSS/styles4.css">
+    <script src="JS/app3.js" defer></script>
+</head>
+<body>
+    <header class="header-principal">
+        <div class="logo-titulo">
+            <img src="Imagenes/Logo.png" alt="Logo D.M.O Mayoristas" class="logo">
+            <h1>D.M.O Soluciones Mayoristas</h1>
+        </div>
+
+        <nav class="nav-principal">
+            <a href="index.html">Inicio</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="contacto.html" class="active">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>CONTACTO Y SOPORTE MAYORISTA</h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="card">
+            
+            <div id="seccion-publica">
+                <div class="mensaje-bienvenida">
+                    <h2>Atención Comercial a Almacenes y Comercios</h2>
+                    <p>Esta sección está diseñada para brindarte atención directa si tienes dudas sobre la compra de lotes de mercadería, paquetes de abarrotes o convenios de distribución.</p>
+                    <p>Todas las consultas enviadas son respondidas en un plazo máximo de <strong>24 horas hábiles</strong>.</p>
+                </div>
+
+                <h2>¿Para qué puedes contactarnos?</h2>
+                <ul>
+                    <li><strong>Asesoría Comercial:</strong> Si tienes un negocio o almacén local y buscas cotizar pedidos por volumen.</li>
+                    <li><strong>Consultas sobre Reservas:</strong> Si deseas verificar el estado de una cotización o adquirir un pack de catálogo.</li>
+                    <li><strong>Soporte Técnico y Despacho:</strong> Para resolver problemas de acceso o gestionar entregas de pedidos.</li>
+                </ul>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eaeaea;">
+
+                <div id="seccion-login">
+                    <h2>Iniciar Sesión Cliente</h2>
+                    <p>Ingresa tus credenciales para acceder al panel de atención:</p>
+                    
+                    <form id="form-login" novalidate>
+                        <div class="campo">
+                            <label for="usuario">Usuario / Empresa:</label>
+                            <input type="text" id="usuario">
+                            <p id="error-usuario" class="mensaje-error"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" id="correo">
+                            <p id="error-correo" class="mensaje-error"></p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="clave">Contraseña:</label>
+                            <input type="password" id="clave">
+                            <p id="error-clave" class="mensaje-error"></p>
+                        </div>
+
+                        <button type="submit" class="btn">Ingresar al Panel</button>
+                    </form>
+                </div>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eaeaea;">
+
+                <div>
+                    <h2>Ubicación</h2>
+                    <p><strong>Lugar:</strong> Oficina Central Las Condes</p>
+                    <p><strong>Dirección:</strong> Av. Apoquindo, Las Condes, Santiago, Región Metropolitana</p>
+                    
+                    <div style="margin: 15px 0; text-align: center;">
+                        <img src="Imagenes/Las condes.png" alt="Oficina Las Condes" style="width: 100%; max-height: 350px; object-fit: cover; border-radius: 4px; border: 1px solid #ccc;">
+                    </div>
+
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.345689012345!2d-70.5750!3d-33.4120!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c58988888888%3A0x876543210abcdef!2sAv.%20Apoquindo%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl&maptype=roadmap&fullscreenControl=0" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0; margin-top: 10px;" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <div id="panel-admin" style="display: none;">
+                <h2>Panel de Atención y Cotizaciones Registradas</h2>
+                <p>A continuación se detallan los pedidos y cotizaciones mayoristas guardados en el sistema:</p>
+                
+                <table id="tabla-pedidos" class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>Cliente / Usuario</th>
+                            <th>Correo Electrónico</th>
+                            <th>Pack / Servicio</th>
+                            <th>Monto Oferta</th>
+                            <th>Fecha Registro</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                    </tbody>
+                </table>
+
+                <div class="acciones-panel-admin">
+                    <button id="btn-cerrar" class="btn">Cerrar Sesión</button>
+                    <button id="btn-cerrar-admin" class="btn" style="display: none; background-color: #1e293b;">Cerrar Sesión Admin</button>
+                    <button type="button" id="btn-abrir-modal-admin" class="btn-admin-panel">Acceso Creador / Admin</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div id="modal-admin" class="modal-overlay" style="display: none;">
+        <div class="modal-contenido">
+            <span id="cerrar-modal-admin" class="cerrar-modal">&times;</span>
+            <h2>Ingreso Administrador / Creador</h2>
+            <p>Ingresa el nombre de usuario y contraseña para continuar:</p>
+            
+            <form id="form-login-admin" novalidate>
+                <div class="campo">
+                    <label for="admin-nombre">Nombre de Usuario:</label>
+                    <input type="text" id="admin-nombre">
+                    <p id="error-admin-nombre" class="mensaje-error"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="admin-clave">Contraseña:</label>
+                    <input type="password" id="admin-clave">
+                    <p id="error-admin-clave" class="mensaje-error"></p>
+                </div>
+
+                <button type="submit" class="btn btn-admin-ingresar">Entrar como Admin</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="alertFloat"></div>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-contacto">
+                <h3>Contacto Directo</h3>
+                <p><strong>Teléfono:</strong> +56 9 53518383</p>
+                <p><strong>Correo:</strong> contacto@DMO soluciones mayorista.cl</p>
+                <p><strong>Dirección:</strong> Av. Apoquindo, Las Condes, Santiago, Región Metropolitana</p>
+            </div>
+            <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eaeaea;">
+            <p>&copy; 2026 D.M.O Soluciones Mayoristas.</p>
+        </div>
+    </footer>
+</body>
