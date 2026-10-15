@@ -1,40 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
     var packs = [
         { 
-            titulo: 'Belleza & Cosmetica', 
+            titulo: 'Belleza & Cosmética', 
             precio: 15000, 
             descripcion: 'Productos esenciales de maquillaje y cosmética para potenciar tu catálogo.',
-            imagen: "Belleza & Cosmetica.png' 
+            imagen: 'Imagenes/Belleza & Cosmética.png' 
         },
         { 
             titulo: 'Cuidado Personal', 
             precio: 8000, 
             descripcion: 'Variedad de artículos de higiene y cuidado diario por mayor.',
-            imagen: 'Cuidado Personal.png' 
+            imagen: 'Imagenes/Cuidado Personal.png' 
         },
         { 
             titulo: 'Accesorios de pelo', 
             precio: 8000, 
             descripcion: 'Surtido amplio con despacho prioritario para minimarkets y locales.',
-            imagen: 'Acesorios de pelo.png' 
+            imagen: 'Imagenes/Accesorios de pelo.png' 
         },
         { 
             titulo: 'Bisusteria', 
             precio: 5000, 
             descripcion: 'Complementos y accesorios de bisutería con diseños atractivos.',
-            imagen: 'Bisuteria.png' 
+            imagen: 'Imagenes/Bisuteria.png' 
         },
         { 
             titulo: 'Pestañas por Punto', 
             precio: 10000, 
             descripcion: 'Extensiones y pestañas por punto de alta calidad para aplicación.',
-            imagen: 'Pestañas por punto.png' 
+            imagen: 'Imagenes/Pestañas por punto.png' 
         },
         { 
             titulo: 'Collares', 
             precio: 4500, 
             descripcion: 'Hermosos diseños de collares por mayor para complementar tu tienda.',
-            imagen: 'Collares.png' 
+            imagen: 'Imagenes/Collares.png' 
         }
     ];
 
