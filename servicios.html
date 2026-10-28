@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="D.M.O Soluciones Mayoristas">
+    <meta name="description" content="Catálogo de packs mayoristas y pedidos en línea de D.M.O Soluciones Mayoristas.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Catálogo y pedidos - D.M.O Soluciones Mayoristas">
+    <meta property="og:description" content="Catálogo de packs mayoristas y pedidos en línea de D.M.O Soluciones Mayoristas.">
+    <title>Catálogo y pedidos - D.M.O Soluciones Mayoristas</title>
+    <link rel="icon" href="Imagenes/Logo_DMO.png">
+    <link rel="stylesheet" href="CSS/styles3.css">
+    <script src="JS/app2.js" defer></script>
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- ALERTA VISUAL SUPERIOR (TIPO BANNER FLOTANTE) -->
+    <div id="alerta-banner-flotante" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; width: 90%; max-width: 600px; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-weight: bold; text-align: center; transition: all 0.3s ease;">
+        <span id="texto-alerta-banner"></span>
+        <button type="button" onclick="document.getElementById('alerta-banner-flotante').style.display='none'" style="background:none; border:none; float:right; font-size: 18px; cursor:pointer; font-weight:bold; margin-left: 10px;">&times;</button>
+    </div>
+
+    <header class="header-principal">
+        <div class="logo-titulo">
+            <img src="Imagenes/Logo_DMO.png" alt="Logo D.M.O Soluciones Mayoristas" class="logo">
+            <h1>D.M.O Soluciones Mayoristas</h1>
+        </div>
+
+            <nav class="nav-principal" aria-label="Principal">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html" class="active" aria-current="page">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>NUESTROS RUBROS Y CATÁLOGOS</h2>
+            <p>Ofrecemos una variedad de categorías pensadas para maximizar tus márgenes de ganancia.</p>
+        </div>
+    </section>
+
+    <main class="container" id="contenido">
+        <section class="card">
+
+            <p id="mensaje-sesion" class="estado" role="status"></p>
+
+            <!-- 1. INICIO DE SESIÓN DEL CLIENTE -->
+            <div id="seccion-login">
+                <h2>Iniciar Sesión Cliente</h2>
+                <p>Puedes ver el catálogo sin ingresar. Para enviar un pedido, identifícate:</p>
+
+                <form id="form-login" novalidate>
+                    <div class="campo">
+                        <label for="usuario">Usuario / Empresa:</label>
+                        <input type="text" id="usuario" autocomplete="organization">
+                        <p id="error-usuario" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" autocomplete="email">
+                        <p id="error-correo" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="clave">Contraseña:</label>
+                        <input type="password" id="clave" autocomplete="current-password">
+                        <p id="error-clave" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <button type="submit" class="btn">Ingresar al Sistema</button>
+                </form>
+            </div>
+
+            <!-- PANEL DE CLIENTE / CUENTA PERSONAL -->
+            <div id="panel-admin" hidden>
+                <h2 id="titulo-panel">Panel de Cliente</h2>
+                <p class="estado ok" style="margin-bottom: 20px;">Sesión activa verificada correctamente.</p>
+
+                <!-- Tarjeta: Estado de Cuenta -->
+                <div class="card-panel-cliente" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #003399; margin-top: 0;">💳 Estado de Cuenta</h3>
+                    <p><strong>Línea de Crédito Mayorista:</strong> $20.000 CLP</p>
+                    <p><strong>Crédito Utilizado:</strong> $<span id="cliente-credito-usado">0</span> CLP</p>
+                    <p><strong>Estado de Facturación:</strong> <span style="color: #155724; font-weight: bold;">Al día / Sin deudas vencidas</span></p>
+                </div>
+
+                <!-- Tarjeta: Servicios y Rubros Frecuentes Contratados -->
+                <div class="card-panel-cliente" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <h3 style="color: #003399; margin-top: 0;">📦 Rubros y Abastecimiento Frecuente</h3>
+                    <p>Estos son los rubros principales asociados a tu cuenta comercial:</p>
+                    <ul id="lista-servicios-cliente" style="margin: 0; padding-left: 20px; color: #555;">
+                        <li>Catálogo Multirubro General (Belleza, Cuidado Personal y Bisutería)</li>
+                        <li>Despacho prioritario para comerciantes minoristas</li>
+                    </ul>
+                </div>
+
+                <!-- Tabla: Historial de Compras -->
+                <h3 style="color: #003399;">📋 Historial de Compras y Pedidos</h3>
+                <p>Detalle de las solicitudes enviadas desde este navegador:</p>
+
+                <div class="tabla-responsive">
+                    <table id="tabla-pedidos" class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Cliente / Usuario</th>
+                                <th>Correo Electrónico</th>
+                                <th>Pack / Servicio</th>
+                                <th>Monto</th>
+                                <th>Fecha Registro</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla"></tbody>
+                    </table>
+                </div>
+
+                <div class="acciones-panel-admin" style="margin-top: 20px;">
+                    <button type="button" id="btn-cerrar" class="btn">Cerrar Sesión</button>
+                </div>
+            </div>
+
+            <hr class="separador">
+
+            <!-- 2. CATÁLOGO Y CARRITO -->
+            <h2>Selección de Catálogos</h2>
+            <p class="instruccion">Haz clic en un rubro para agregarlo a tu carrito de compras:</p>
+
+            <div id="contenedor-obras" class="grid-servicios"></div>
+            <noscript><p>Activa JavaScript en tu navegador para ver el catálogo.</p></noscript>
+
+            <hr class="separador">
+
+            <div class="carrito-container">
+                <h3>🛒 Carrito de Compras</h3>
+                <div class="tabla-responsive">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Producto / Pack</th>
+                                <th>Precio Unitario</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-carrito-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="carrito-resumen">
+                    <p class="monto-total">Total del Pedido: <strong>$<span id="total-carrito">0</span> CLP</strong></p>
+                    <button type="button" id="btn-enviar-pedido" class="btn btn-exito">Enviar Pedido por WhatsApp</button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <a class="wsp-flotante" href="https://wa.me/56953518383?text=Hola%2C%20quiero%20cotizar%20un%20pedido%20mayorista" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+    <footer>
+        <p><a href="admin.html" class="acceso-oculto" tabindex="-1" aria-hidden="true">&copy;</a> 2026 D.M.O Soluciones Mayoristas</p>
+    </footer>
+</body>
+</html>

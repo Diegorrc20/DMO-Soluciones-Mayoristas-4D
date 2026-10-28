@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="D.M.O Soluciones Mayoristas">
+    <title>Administración - D.M.O Soluciones Mayoristas</title>
+    <link rel="icon" href="Imagenes/Logo_DMO.png">
+    <link rel="stylesheet" href="CSS/styles5.css">
+    <script src="JS/app4.js" defer></script>
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+ 
+    <header class="header-principal">
+        <div class="logo-titulo">
+            <img src="Imagenes/Logo_DMO.png" alt="Logo D.M.O Soluciones Mayoristas" class="logo">
+            <h1>D.M.O Soluciones Mayoristas</h1>
+        </div>
+        <nav class="nav-principal" aria-label="Principal">
+            <a href="index.html">Volver al sitio</a>
+        </nav>
+    </header>
+ 
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>ADMINISTRACIÓN</h2>
+            <p>Acceso solo para el equipo de D.M.O.</p>
+        </div>
+    </section>
+ 
+    <main class="container" id="contenido">
+        <section class="card">
+ 
+            <p id="mensaje-sesion" class="estado" role="status"></p>
+ 
+            <!-- INGRESO DEL ADMINISTRADOR -->
+            <div id="seccion-login">
+                <h2>Ingreso Administrador</h2>
+                <p>Ingresa el nombre de usuario y la contraseña para continuar:</p>
+ 
+                <form id="form-login-admin" novalidate>
+                    <div class="campo">
+                        <label for="admin-nombre">Nombre de Usuario:</label>
+                        <input type="text" id="admin-nombre" autocomplete="username">
+                        <p id="error-admin-nombre" class="mensaje-error" role="alert"></p>
+                    </div>
+ 
+                    <div class="campo">
+                        <label for="admin-clave">Contraseña:</label>
+                        <input type="password" id="admin-clave" autocomplete="current-password">
+                        <p id="error-admin-clave" class="mensaje-error" role="alert"></p>
+                    </div>
+ 
+                    <button type="submit" class="btn">Entrar como Admin</button>
+                </form>
+            </div>
+ 
+            <!-- PANEL: TODOS LOS PEDIDOS -->
+            <div id="panel-admin" hidden>
+                <h2>Pedidos y cotizaciones registrados</h2>
+                <p id="resumen-admin" class="resumen-admin"></p>
+                <p class="aviso-demo">Esta lista solo muestra los pedidos guardados <strong>en este navegador</strong>. Los pedidos reales de tus clientes te llegan por WhatsApp.</p>
+ 
+                <div class="tabla-responsive">
+                    <table id="tabla-pedidos" class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Cliente / Usuario</th>
+                                <th>Correo Electrónico</th>
+                                <th>Pack / Servicio</th>
+                                <th>Monto</th>
+                                <th>Fecha Registro</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla"></tbody>
+                    </table>
+                </div>
+ 
+                <div class="acciones-panel-admin">
+                    <button type="button" id="btn-cerrar-admin" class="btn">Cerrar Sesión Admin</button>
+                </div>
+            </div>
+ 
+        </section>
+    </main>
+ 
+    <footer>
+        <p>&copy; 2026 D.M.O Soluciones Mayoristas</p>
+    </footer>
+</body>
+</html>
+ 
