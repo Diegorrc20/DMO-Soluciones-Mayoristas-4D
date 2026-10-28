@@ -8,49 +8,49 @@ const PACKS = [
         titulo: "Cepillo de peluquería para cardado y peinado",
         precio: 1000,
         descripcion: "Herramienta ideal para técnicas de volumen, brushing y acabados profesionales en salón.",
-        imagen: "Imagenes/Cepillo de peluquería para cardado y peinado.png"
+        imagen: "Cepillo de peluquería para cardado y peinado.png"
     },
     {
         titulo: "Cepillo doble para cejas y pestañas o cepillo perfilador de cejas",
         precio: 1000,
         descripcion: "Diseño dual ergonómico para peinar, definir cejas y separar pestañas con precisión.",
-        imagen: "Imagenes/Cepillo doble para cejas y pestañas o cepillo perfilador de cejas.png"
+        imagen: "Cepillo doble para cejas y pestañas o cepillo perfilador de cejas.png"
     },
     {
         titulo: "Cuchillas depiladoras para cejas",
         precio: 1000,
         descripcion: "Cuchillas de alta precisión con protector de seguridad para perfilado facial limpio y rápido.",
-        imagen: "Imagenes/Cuchillas depiladoras para cejas.png"
+        imagen: "Cuchillas depiladoras para cejas.png"
     },
     {
         titulo: "Kit de cepillos y peines para cejas",
         precio: 1500,
         descripcion: "Set completo de accesorios surtidos orientados al cuidado y laminado de cejas.",
-        imagen: "Imagenes/Kit de cepillos y peines para cejas.png"
+        imagen: "Kit de cepillos y peines para cejas.png"
     },
     {
         titulo: "Kit de perfilado de cejas 3 en 1",
         precio: 1500,
         descripcion: "Solución integral que incluye herramientas esenciales para diseño y mantenimiento de cejas.",
-        imagen: "Imagenes/Kit de perfilado de cejas 3 en 1.png"
+        imagen: "Kit de perfilado de cejas 3 en 1.png"
     },
     {
         titulo: "Peine para hacer divisiones en el cabello",
         precio: 1000,
         descripcion: "Peine de púa metálica o fina, resistente al calor, perfecto para particiones limpias y tinturas.",
-        imagen: "Imagenes/Peine para hacer divisiones en el cabello.png"
+        imagen: "Peine para hacer divisiones en el cabello.png"
     },
     {
         titulo: "Peine perfilador de cejas",
         precio: 1000,
         descripcion: "Accesorio compacto y funcional para retoques rápidos y definición perfecta de la mirada.",
-        imagen: "Imagenes/Peine perfilador de cejas.png"
+        imagen: "Peine perfilador de cejas.png"
     },
     {
         titulo: "Pestañas postizas",
         precio: 1000,
         descripcion: "Pestañas con volumen natural y banda flexible para una aplicación cómoda y estética duradera.",
-        imagen: "Imagenes/Pestañas postizas.png"
+        imagen: "Pestañas postizas.png"
     }
 ];
 
