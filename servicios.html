@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003399">
+    <meta name="author" content="D.M.O Soluciones Mayoristas">
+    <meta name="description" content="Catálogo mayorista de belleza, cuidado personal y bisutería: cepillos, kits de cejas, pestañas postizas y más. Arma tu pedido y envíalo por WhatsApp.">
+    <link rel="canonical" href="https://diegorrc20.github.io/DMO-Soluciones-Mayoristas-4D/servicios.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="D.M.O Soluciones Mayoristas">
+    <meta property="og:url" content="https://diegorrc20.github.io/DMO-Soluciones-Mayoristas-4D/servicios.html">
+    <meta property="og:title" content="Catálogo y pedidos - D.M.O Soluciones Mayoristas">
+    <meta property="og:description" content="Catálogo de packs mayoristas y pedidos en línea de D.M.O Soluciones Mayoristas.">
+    <meta property="og:image" content="https://diegorrc20.github.io/DMO-Soluciones-Mayoristas-4D/Imagenes/Logo_DMO.png">
+    <title>Catálogo y pedidos - D.M.O Soluciones Mayoristas</title>
+    <link rel="icon" href="Logo_DMO.png">
+    <link rel="stylesheet" href="styles3.css">
+    <script src="app2.js" defer></script>
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <!-- Alerta superior: el contenido y el color los pone app2.js -->
+    <div id="alerta-banner-flotante" class="alerta-banner" role="status" aria-live="polite" hidden>
+        <span id="texto-alerta-banner"></span>
+        <button type="button" id="btn-cerrar-alerta" class="alerta-cerrar" aria-label="Cerrar aviso">&times;</button>
+    </div>
+
+    <header class="header-principal">
+        <div class="header-container">
+            <div class="logo-titulo">
+                <img src="Logo_DMO.png" alt="Logo D.M.O Soluciones Mayoristas" class="logo">
+                <h1>D.M.O Soluciones Mayoristas</h1>
+            </div>
+
+            <nav class="nav-principal" aria-label="Principal">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html" class="active" aria-current="page">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="juego.html" class="active" aria-current="page">Juego</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>NUESTROS RUBROS Y CATÁLOGOS</h2>
+            <p>Ofrecemos una variedad de categorías pensadas para maximizar tus márgenes de ganancia.</p>
+        </div>
+    </section>
+
+    <main class="container" id="contenido">
+        <section class="card">
+
+            <p id="mensaje-sesion" class="estado" role="status"></p>
+
+            <!-- 1. INICIO DE SESIÓN DEL CLIENTE -->
+            <div id="seccion-login">
+                <h2>Iniciar Sesión Cliente</h2>
+                <p>Puedes ver el catálogo sin ingresar. Para enviar un pedido, identifícate:</p>
+
+                <form id="form-login" novalidate>
+                    <div class="campo">
+                        <label for="usuario">Usuario / Empresa:</label>
+                        <input type="text" id="usuario" autocomplete="organization">
+                        <p id="error-usuario" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" autocomplete="email">
+                        <p id="error-correo" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="clave">Contraseña:</label>
+                        <input type="password" id="clave" autocomplete="current-password">
+                        <label class="mostrar-clave" for="mostrar-clave">
+                            <input type="checkbox" id="mostrar-clave"> Mostrar contraseña
+                        </label>
+                        <p id="error-clave" class="mensaje-error" role="alert"></p>
+                    </div>
+
+                    <button type="submit" class="btn">Ingresar al Sistema</button>
+                </form>
+            </div>
+
+            <!-- PANEL DE CLIENTE / CUENTA PERSONAL -->
+            <div id="panel-admin" hidden>
+                <h2 id="titulo-panel">Panel de Cliente</h2>
+                <p class="estado ok panel-estado">Sesión activa.</p>
+
+                <div class="card-panel-cliente">
+                    <h3>Resumen de tus pedidos</h3>
+                    <p><strong>Pedidos enviados desde este navegador:</strong> <span id="cliente-cantidad-pedidos">0</span></p>
+                    <p><strong>Total acumulado:</strong> $<span id="cliente-total-pedidos">0</span> CLP</p>
+                </div>
+
+                <div class="card-panel-cliente">
+                    <h3>Rubros y Abastecimiento Frecuente</h3>
+                    <p>Estos son los rubros principales asociados a tu cuenta comercial:</p>
+                    <ul id="lista-servicios-cliente">
+                        <li>Catálogo Multirubro General (Belleza, Cuidado Personal y Bisutería)</li>
+                        <li>Despacho prioritario para comerciantes minoristas</li>
+                    </ul>
+                </div>
+
+                <h3 class="titulo-historial">Historial de Compras y Pedidos</h3>
+                <p>Detalle de las solicitudes enviadas desde este navegador:</p>
+
+                <div class="tabla-responsive">
+                    <table id="tabla-pedidos" class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Cliente / Usuario</th>
+                                <th>Correo Electrónico</th>
+                                <th>Pack / Servicio</th>
+                                <th>Monto</th>
+                                <th>Fecha Registro</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-tabla"></tbody>
+                    </table>
+                </div>
+
+                <div class="acciones-panel-admin acciones-panel">
+                    <button type="button" id="btn-cerrar" class="btn">Cerrar Sesión</button>
+                </div>
+            </div>
+
+            <hr class="separador">
+
+            <!-- 2. CATÁLOGO Y CARRITO -->
+            <h2>Selección de Catálogos</h2>
+            <p class="instruccion">Busca un producto y haz clic en "Agregar al Carrito":</p>
+
+            <div class="buscador">
+                <label for="buscar-catalogo">Buscar producto</label>
+                <input type="search" id="buscar-catalogo" placeholder="Ej: cejas, pestañas, peine" autocomplete="off">
+                <p id="contador-catalogo" class="contador-catalogo" role="status"></p>
+            </div>
+
+            <div id="contenedor-obras" class="grid-servicios"></div>
+            <noscript><p>Activa JavaScript en tu navegador para ver el catálogo.</p></noscript>
+
+            <hr class="separador">
+
+            <div class="carrito-container">
+                <h3>🛒 Carrito de Compras</h3>
+                <div class="tabla-responsive">
+                    <table class="tabla-admin">
+                        <thead>
+                            <tr>
+                                <th>Producto / Pack</th>
+                                <th>Precio Unitario</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-carrito-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="notas-pedido">
+                    <label for="notas-pedido">Comuna o notas del pedido (opcional)</label>
+                    <textarea id="notas-pedido" rows="2" maxlength="300" placeholder="Ej: Despacho a Providencia. Tengo local en Av. ..."></textarea>
+                </div>
+
+                <div class="carrito-resumen">
+                    <p class="monto-total">Total del Pedido: <strong>$<span id="total-carrito">0</span> CLP</strong></p>
+                    <div class="carrito-acciones">
+                        <button type="button" id="btn-vaciar-carrito" class="btn-secundario">Vaciar carrito</button>
+                        <button type="button" id="btn-enviar-pedido" class="btn btn-exito">Enviar Pedido por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <a class="wsp-flotante" href="https://wa.me/56953518383?text=Hola%2C%20quiero%20cotizar%20un%20pedido%20mayorista" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+    <footer>
+        <p><a href="admin.html" class="acceso-oculto" tabindex="-1" aria-hidden="true">&copy;</a> 2026 D.M.O Soluciones Mayoristas</p>
+    </footer>
+</body>
+</html>

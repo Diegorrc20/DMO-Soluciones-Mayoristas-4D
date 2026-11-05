@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#003399">
+    <meta name="author" content="D.M.O Soluciones Mayoristas">
+    <title>Juego - D.M.O Soluciones Mayoristas</title>
+    <link rel="icon" href="Logo_DMO.png">
+    <script src="app5.js" defer></script>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9d5ff;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-principal {
+            background-color: #ffffff;
+            border-bottom: 3px solid #ff2a85;
+            padding: 12px 30px;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-titulo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            height: 140px;
+            width: auto;
+        }
+
+        .logo-titulo h1 {
+            font-size: 1.3rem;
+            color: #003399;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .nav-principal {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-principal a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: bold;
+            font-size: 0.95rem;
+            padding: 6px 10px;
+        }
+
+        .nav-principal a:hover,
+        .nav-principal a.active {
+            color: #ff2a85;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(255, 42, 133, 0.95) 0%, rgba(0, 51, 153, 0.95) 100%);
+            border-bottom: 4px solid #ff2a85;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 6px;
+        }
+
+        .hero-content p {
+            color: #f1f5f9;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+            flex: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #ff69b4;
+            box-shadow: 0 8px 25px rgba(255, 42, 133, 0.15);
+        }
+
+        .section-block h2 {
+            color: #003399;
+            margin-top: 0;
+        }
+
+        .juego-instruccion {
+            text-align: center;
+            font-size: 1rem;
+            color: #555555;
+            margin-bottom: 20px;
+        }
+
+        .game-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff0f6;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ffb6c1;
+        }
+
+        .game-controls span {
+            font-weight: bold;
+            color: #003399;
+        }
+
+        .difficulty-selector {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .difficulty-btn {
+            padding: 8px 16px;
+            border: 2px solid #ff2a85;
+            background: #ffffff;
+            color: #ff2a85;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .difficulty-btn:hover,
+        .difficulty-btn.active {
+            background: #ff2a85;
+            color: #ffffff;
+            border-color: #003399;
+        }
+
+        .game-status {
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 1.8em;
+            color: #003399;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #fff0f6;
+            border: 1px solid #ffb6c1;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            max-width: 780px;
+            margin: 0 auto;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        @media (max-width: 640px) {
+            .cards-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+        }
+
+        .card-item {
+            aspect-ratio: 1 / 1;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .card-item:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-item.flipped:hover {
+            transform: rotateY(180deg) translateY(-4px);
+        }
+
+        .card-item.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 6px 16px rgba(255, 42, 133, 0.25);
+            user-select: none;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: #ffffff;
+            color: #003399;
+            border: 4px solid #ff2a85;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        /* Reverso de la carta circular con estilo rosado vibrante */
+        .card-back {
+            background: linear-gradient(135deg, #ff2a85 0%, #ff69b4 50%, #ff1493 100%);
+            color: #ffffff;
+            border: 4px solid #ffffff;
+            transform: rotateY(180deg);
+            padding: 4px;
+            box-shadow: 0 6px 16px rgba(0, 51, 153, 0.2);
+        }
+
+        /* LOGO GRANDE Y DESTACADO DENTRO DE LA CARTA */
+        .card-logo-img {
+            width: 82%;   /* Ocupa gran parte del círculo para que se vea de muy buen tamaño */
+            height: 82%;  
+            object-fit: contain;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 4px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-item.correct .card-front {
+            background: #16a34a;
+            color: #ffffff;
+            border-color: #15803d;
+        }
+
+        .card-item.wrong .card-front {
+            background: #dc2626;
+            color: #ffffff;
+            border-color: #b91c1c;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #003399;
+            color: #ffffff;
+            border: none;
+            border-bottom: 3px solid #ff2a85;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #ff2a85;
+            border-bottom-color: #003399;
+        }
+
+        .btn-reiniciar-juego {
+            display: block;
+            margin: 25px auto 0 auto;
+            max-width: 250px;
+            width: 100%;
+        }
+
+        .saltar {
+            position: absolute;
+            left: -999px;
+            top: 0;
+            background: #ff2a85;
+            color: #ffffff;
+            padding: 8px 14px;
+            font-weight: bold;
+            z-index: 2000;
+        }
+        .saltar:focus { left: 0; }
+
+        .wsp-flotante {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            background-color: #1faa59;
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 999px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            z-index: 900;
+        }
+        .wsp-flotante:hover { background-color: #188a48; }
+
+        footer {
+            background-color: #0b1325;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        .acceso-oculto {
+            color: inherit;
+            text-decoration: none;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+    <header class="header-principal">
+        <div class="header-container">
+            <div class="logo-titulo">
+                <img src="Logo_DMO.png" alt="Logo D.M.O Soluciones Mayoristas" class="logo">
+                <h1>D.M.O Soluciones Mayoristas</h1>
+            </div>
+
+            <nav class="nav-principal" aria-label="Principal">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="juego.html" class="active" aria-current="page">Juego</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h2>DESAFÍO DE AGILIDAD Y MEMORIA</h2>
+            <p>Elige tu número, síguelo mientras se mueven las cartas y pruébate a ti mismo.</p>
+        </div>
+    </section>
+
+    <main class="container" id="contenido">
+        <section class="card">
+            <div class="section-block">
+                <h2>Encuentra tu Número Mayorista</h2>
+                <p class="juego-instruccion">
+                    Elige el nivel de dificultad según la velocidad deseada y haz clic en cualquier número del 1 al 20 para comenzar.
+                </p>
+            </div>
+
+            <div class="game-controls">
+                <span>Dificultad:</span>
+                <div class="difficulty-selector">
+                    <button type="button" class="difficulty-btn active" data-speed="900" data-swaps="8">Fácil</button>
+                    <button type="button" class="difficulty-btn" data-speed="450" data-swaps="14">Normal</button>
+                    <button type="button" class="difficulty-btn" data-speed="220" data-swaps="20">Difícil</button>
+                </div>
+            </div>
+
+            <div id="game-status" class="game-status" role="status">Haz clic en un número para seleccionarlo</div>
+
+            <div id="cards-grid" class="cards-grid">
+                <!-- Las 20 cartas circulares se renderizan desde JavaScript -->
+            </div>
+
+            <button type="button" id="btn-reiniciar" class="btn btn-reiniciar-juego" style="display: none;">Volver a Jugar</button>
+        </section>
+    </main>
+
+    <a class="wsp-flotante" href="https://wa.me/56953518383?text=Hola%2C%20quiero%20cotizar%20un%20pedido%20mayorista" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+    <footer>
+        <p><a href="admin.html" class="acceso-oculto" tabindex="-1" aria-hidden="true">&copy;</a> 2026 D.M.O Soluciones Mayoristas</p>
+    </footer>
+</body>
+</html>
